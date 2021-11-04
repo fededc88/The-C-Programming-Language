@@ -1,7 +1,7 @@
 /*
- * Exercise 1-3. Modify the temperature conversion program to print a heading
- * above the table.  
- *
+ * Exercise 1-3. Modify the temperature conversion program to print the table in
+ * reverse order, taht is, form 300 degrees to 0
+ * 
  * Writen by Federico D. Ceccarelli (fededc88@gmail.com), any kinrdg of submision are welcome. 
  */
 
