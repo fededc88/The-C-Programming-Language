@@ -1,3 +1,13 @@
+
+/*
+ * Exercise 1-13. Write a program to print a histogram of the lenghts of words
+ * in its input. It is easy to draw the histogram with the bars horizontal; a
+ * vertical otientation is more challenging.
+ *
+ * Writen by Federico D. Ceccarelli (fededc88@gmail.com), any kinrdg of
+ * submision are welcome. 
+ */
+
 #include <stdio.h>
 
 #define TRUE 1
@@ -19,12 +29,18 @@ int main(void)
     int new_word;
     int letters_count;
 
-    int first, last;
+    int first, last, longest;
 
     new_word = FALSE;
     letters_count = 0;
 
-    // count words letters
+    // Count Word's letters length until EOF is founded
+
+    /*
+     * Shortcut to access EOF:
+     *     Windows: CTRL+Z
+     *     Unix like systems: CTRL+D.
+     */
     while((c = getchar()) != EOF)
     {
         if(c == ' ' || c == '\n' || c == '\t')
@@ -40,8 +56,7 @@ int main(void)
         }
     }
 
-
-
+    // init variables
     first = 0;
     last = 0;
     
@@ -54,7 +69,7 @@ int main(void)
                 last = i;
 
     // Print horizontal Histogram
-    printf("\nhorizontal histogram\n---------------------\n\n");
+    printf("\nhorizontal histogram\n--------------------\n\n");
     for( int i = first; i <= last; i++)
     {
         printf("%d: ", i);
@@ -65,6 +80,47 @@ int main(void)
 
         printf("\n");
     }
+    
+    // Print vertical Histogram
+    printf("\nvertical histogram\n------------------\n\n");
+
+    // Init variable
+    longest = 0;
+    // Find longest colum length
+    for( int j = first; j<= last; j++)
+        if(histogram_x[j]> longest)
+            longest = histogram_x[j];
+
+    // print colums from the longest one, line by line
+    for (int k = longest; k > 0; k--){
+        for( int i = first; i <= last; i++){
+            if (i > 9)
+                printf("  ");
+            else
+                printf(" ");
+
+            if (histogram_x[i] >= k)
+                printf("#");
+            else
+                printf(" ");
+        }
+        printf("\n");
+    }
+
+    // Print x axis references
+    for( int i = first; i <= last; i++)
+    {
+        if (i>9)
+            printf(" %2d", i);
+        else
+            printf("%2d", i);
+    }
+
+    printf("\n");
 
     return 0;
 }
+
+// 
+// End of file.
+//
