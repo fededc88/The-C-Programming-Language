@@ -1,10 +1,13 @@
-
 /*
- * Exercise 1-11. How would you test the word count program? Whay kind of imput
+ * Exercise 1-11. How would you test the word count program? What kind of input
  * are most likely to uncover bugs if there are any?
+ *
+ * The program counts lines, words, and characters, with the loose definition
+ * that a word is any sequence of characters that does not contain a blank, tab
+ * or newline.
  * 
- * Writen by Federico D. Ceccarelli (fededc88@gmail.com), any kinrdg of
- * submision are welcome. 
+ * Writen by Federico D. Ceccarelli (fededc88@gmail.com), any kind of
+ * submissions are welcome. 
  */
 
 #include <stdio.h>

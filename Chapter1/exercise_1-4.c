@@ -1,14 +1,15 @@
 /*
- * Exercise 1-4. Write a program to print the corresponding Celsius to Farenheit
+ * Exercise 1-4. Write a program to print the corresponding Celsius to Fahrenheit
  * table
  * 
- * Writen by Federico D. Ceccarelli (fededc88@gmail.com), any kinrdg of submision are welcome. 
+ * Writen by Federico D. Ceccarelli (fededc88@gmail.com), any kind of submission
+ * are welcome. 
  */
 
 #include <stdio.h>
 
 /*
- * print Fahrenheit-Celsius table for fahr = 0, 20, ..., 300; floating-point
+ * print Celsius-Fahrenheit table for fahr = 0, 20, ..., 300; floating-point
  * vesion 
  */
 
@@ -18,8 +19,8 @@ void main (void)
     float lower, upper, step;
 
     lower = -17.8;   /* lower limit of temperature table */
-    upper = 148.9; /* upper limit */
-    step = 11.11;   /* step size */
+    upper = 148.9;   /* upper limit */
+    step = 11.11;    /* step size */
 
     celsius = lower;
     printf("  C   \t   F\n\r");

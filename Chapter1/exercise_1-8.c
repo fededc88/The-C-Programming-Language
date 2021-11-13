@@ -1,9 +1,8 @@
-
 /*
- * Exercise 1-8. Write a program to count blanks, tabs, and newlines.
+ * Exercise 1-8. Write a program to count blanks, tabs, and new lines.
  * 
- * Writen by Federico D. Ceccarelli (fededc88@gmail.com), any kinrdg of
- * submision are welcome. 
+ * Writen by Federico D. Ceccarelli (fededc88@gmail.com), any kind of submission
+ * are welcome. 
  */
   
 #include <stdio.h>

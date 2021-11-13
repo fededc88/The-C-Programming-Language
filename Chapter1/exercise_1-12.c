@@ -1,9 +1,8 @@
-
 /*
  * Exercise 1-12. Write a program that prints its input one word per line.
  * 
- * Writen by Federico D. Ceccarelli (fededc88@gmail.com), any kinrdg of
- * submision are welcome. 
+ * Writen by Federico D. Ceccarelli (fededc88@gmail.com), any kind of
+ * submission are welcome. 
  */
 
 #include <stdio.h>

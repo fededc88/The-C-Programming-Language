@@ -1,7 +1,8 @@
 /*
  * Exercise 1-6. Verify that the expresion getchar() != EOF is 0 or 1
  * 
- * Writen by Federico D. Ceccarelli (fededc88@gmail.com), any kinrdg of submision are welcome. 
+ * Writen by Federico D. Ceccarelli (fededc88@gmail.com), any kind of submission
+ * are welcome. 
  */
   
 #include <stdio.h>

@@ -1,8 +1,9 @@
 /*
- * Exercise 1-2. Experiment to find out whay happens when prontf's argument
- * string contains \c, where c is some character listed above. 
+ * Exercise 1-2. Experiment to find out what happens when printf's argument
+ * string contains \c, where c is some character not listed above. 
  *
- * Writen by Federico D. Ceccarelli (fededc88@gmail.com), any kinrdg of submision are welcome. 
+ * Writen by Federico D. Ceccarelli (fededc88@gmail.com), any kind of submission
+ * are welcome. 
  */
 
 #include <stdio.h>

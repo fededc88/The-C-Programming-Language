@@ -1,10 +1,9 @@
-
 /*
  * Exercise 1-14. Write a program to print a histogram of the frequencies of
  * different characters in its imput.
  *
- * Writen by Federico D. Ceccarelli (fededc88@gmail.com), any kinrdg of
- * submision are welcome. 
+ * Writen by Federico D. Ceccarelli (fededc88@gmail.com), any kind of
+ * submissions are welcome. 
  */
 
 #include <stdio.h>

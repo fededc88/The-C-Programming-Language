@@ -1,11 +1,10 @@
-
 /*
  * Exercise 1-10. Write a program to copy its input to its putput, replacing each
  * tab by \t, each backspace by \b, and each backslash by \\. This makes tabs
  * and backspaces visible in an unanmbiguous way.
  * 
- * Writen by Federico D. Ceccarelli (fededc88@gmail.com), any kinrdg of
- * submision are welcome. 
+ * Writen by Federico D. Ceccarelli (fededc88@gmail.com), any kind of
+ * submissions are welcome. 
  */
   
 #include <stdio.h>

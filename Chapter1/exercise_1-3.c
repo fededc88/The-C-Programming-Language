@@ -2,7 +2,8 @@
  * Exercise 1-3. Modify the temperature conversion program to print a heading
  * above the table.  
  *
- * Writen by Federico D. Ceccarelli (fededc88@gmail.com), any kinrdg of submision are welcome. 
+ * Writen by Federico D. Ceccarelli (fededc88@gmail.com), any kind of submission
+ * are welcome. 
  */
 
 #include <stdio.h>
@@ -17,9 +18,9 @@ void main (void)
     float fahr, celsius;
     int lower, upper, step;
 
-    lower = 0; /* lower limit of temperature table */
+    lower = 0;   /* lower limit of temperature table */
     upper = 300; /*upper limit */
-    step = 20; /*step size */
+    step = 20;   /*step size */
 
     fahr = lower;
     printf("  F    \t   C\n\r");

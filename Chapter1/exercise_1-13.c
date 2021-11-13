@@ -1,11 +1,10 @@
-
 /*
  * Exercise 1-13. Write a program to print a histogram of the lenghts of words
  * in its input. It is easy to draw the histogram with the bars horizontal; a
- * vertical otientation is more challenging.
+ * vertical orientation is more challenging.
  *
- * Writen by Federico D. Ceccarelli (fededc88@gmail.com), any kinrdg of
- * submision are welcome. 
+ * Writen by Federico D. Ceccarelli (fededc88@gmail.com), any kind of
+ * submission are welcome. 
  */
 
 #include <stdio.h>
@@ -18,6 +17,7 @@ The longest word in any of the major English language dictionaries is
 pneumonoultramicroscopicsilicovolcanoconiosis, a word that refers to a lung
 disease contracted from the inhalation of very fine silica particles,
 specifically from a volcano; medically, it is the same as silicosis.
+
 Histogram counts words up to 46 characters because of this.
 */
 #define LENGTH 46

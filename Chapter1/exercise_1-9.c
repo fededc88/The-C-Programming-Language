@@ -1,11 +1,9 @@
-
-
 /*
  * Exercise 1-9. Write a program to copy its input to its putput, replacing each
  * string of one or more blanks by a single blank.
  * 
- * Writen by Federico D. Ceccarelli (fededc88@gmail.com), any kinrdg of
- * submision are welcome. 
+ * Writen by Federico D. Ceccarelli (fededc88@gmail.com), any kind of
+ * submissions are welcome. 
  */
   
 #include <stdio.h>

@@ -1,7 +1,8 @@
 /*
  * Exercise 1-7. Write a program to print the value of EOF.
  * 
- * Writen by Federico D. Ceccarelli (fededc88@gmail.com), any kinrdg of submision are welcome. 
+ * Writen by Federico D. Ceccarelli (fededc88@gmail.com), any kind of submission
+ * are welcome. 
  */
   
 #include <stdio.h>
