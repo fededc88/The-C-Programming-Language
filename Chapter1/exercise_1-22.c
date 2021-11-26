@@ -77,7 +77,7 @@ void fold (char s[])
         } else
             s[j++] = buff[i]; /* insert everithing else */
 
-    s[j]  =  '\0';
+    s[++j]  =  '\0';
 }
 
 // 
