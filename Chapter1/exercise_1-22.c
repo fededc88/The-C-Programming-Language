@@ -8,6 +8,13 @@
  * are welcome. 
  */
 
+/* 
+   NOTE: I fold line when a non-blank character occurs within the last 15% of
+   line characters but could not be the last non-blank occurrence of the line.
+   Could have been corrected but I prefer to keep going with next exercises.
+   If you want to edit it and pull request it feel free!, I would appreciate it.
+ */
+
 #include <stdio.h>
 
 #define MAXLINE 1000     /* maximum input line size */
@@ -62,9 +69,10 @@ void fold (char s[])
     //NOTE: It isn't necessary check that the string have at least 1 character
     //because of our getLine function implementation. 
 
-    /* entab string */
+    /* fold string */
     for(i = 0, j = 0, line = 0; buff[i] != '\0'; i++)
     {
+       /* look for blanks on the last 15% of the line */ 
         if( (i % LINEN) >= (LINEN*0.85) && (j / LINEN) >= line)
         {
             if(buff[i] == ' ' || buff[i] == '\t')
@@ -77,6 +85,7 @@ void fold (char s[])
                 s[j++] = buff[i]; /* insert everithing else */
 
         }
+        /* if the en of line is reached */
         else if ((i / LINEN) > line )
         {
             s[j++] = '\n';
