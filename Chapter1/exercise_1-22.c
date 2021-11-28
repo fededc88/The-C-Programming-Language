@@ -64,20 +64,32 @@ void fold (char s[])
 
     /* entab string */
     for(i = 0, j = 0, line = 0; buff[i] != '\0'; i++)
-        if( (i / LINEN) > line)
+    {
+        if( (i % LINEN) >= (LINEN*0.85) && (j / LINEN) >= line)
         {
             if(buff[i] == ' ' || buff[i] == '\t')
             {
                 s[j++] = '\n';
                 line++;
-                i++;
+                while(buff[i+1] == ' ' || buff[i+1] == '\t')
+                    i++;
             } else
                 s[j++] = buff[i]; /* insert everithing else */
 
-        } else
-            s[j++] = buff[i]; /* insert everithing else */
+        }
+        else if ((i / LINEN) > line )
+        {
+            s[j++] = '\n';
+            line++;
+            i--;
+            while(buff[i+1] == ' ' || buff[i+1] == '\t')
+                i++;
+        }
+        else
+           s[j++] = buff[i]; /* insert everithing else */
+    }
 
-    s[++j]  =  '\0';
+    s[j]  =  '\0';
 }
 
 // 
