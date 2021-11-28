@@ -1,6 +1,6 @@
 /*
- * Exercise 1-23: Write a program to remove all comments froma  C program. Don't
- * forget to handle quoted strings characer constants properly. C coments do not
+ * Exercise 1-23: Write a program to remove all comments from a C program. Don't
+ * forget to handle quoted strings characer constants properly. C comments do not
  * nest.
  *
  * Writen by Federico D. Ceccarelli (fededc88@gmail.com), any kind of submission
@@ -49,7 +49,7 @@ int getLine(char s[], int lim)
     return i;
 }
 
-/* remove_comments: reads line and return line without comments */
+/* remove_comments: reads a line and return it without comments */
 void remove_comments (char s[])
 {
     int i, j;
@@ -93,40 +93,45 @@ void remove_comments (char s[])
                 quote_char = FALSE;
             s[j++] = buff[i++]; /* insert everithing else */
         }
+        /* both comments types in C are open with '/' */
         else if (buff[i] == '/')
         {
             i++;
-
-            if( buff[i] == '\0')
+            
+            /* Precautionary in case '/' were the las character */
+            if( buff[i] == '\0') 
                     break;
 
+            /* single line comment */
             if( buff[i] == '/' )
             {
-                while(buff[++i] != '\n');
+                while(buff[++i] != '\n'); // Single line comment ends on 'new-line'
                 break;
             }
 
+            /* block comment */
             else if(buff[i] == '*')
                 block_comment = TRUE;
 
+            /* something else */
             else
-            {
                 s[j++] = buff[i-1]; /* insert everithing else */
-                s[j++] = buff[i]; /* insert everithing else */
-            }
         }
+        /* starts a string quotation */
         else if (buff[i] == '"')
         {
                 quote = TRUE;
                 s[j++] = buff[i++]; /* insert everithing else */
         }
+        /* starts a character quotation */
         else if (buff[i] == '\'')
         {
                 quote_char = TRUE;
                 s[j++] = buff[i++]; /* insert everithing else */
         }
+        /* everything else should be copied */
         else
-            s[j++] = buff[i++]; /* insert everithing else */
+            s[j++] = buff[i++]; /* insert everything else */
     }
 
     s[j]  =  '\0';
