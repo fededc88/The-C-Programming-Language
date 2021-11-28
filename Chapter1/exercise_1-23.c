@@ -82,16 +82,16 @@ void remove_comments (char s[])
         {
             if(buff[i] == '"' )
                 quote = FALSE;
-            s[j++] = buff[i++]; /* insert everithing else */
+            s[j++] = buff[i++]; /* insert everything else */
         }
         else if (quote_char == TRUE)
         {
             if(buff[i] == '\\') 
             {
-                s[j++] = buff[i++]; /* insert everithing else */
+                s[j++] = buff[i++]; /* insert everything else */
             } else if(buff[i] == '\'') 
                 quote_char = FALSE;
-            s[j++] = buff[i++]; /* insert everithing else */
+            s[j++] = buff[i++]; /* insert everything else */
         }
         /* both comments types in C are open with '/' */
         else if (buff[i] == '/')
@@ -115,19 +115,19 @@ void remove_comments (char s[])
 
             /* something else */
             else
-                s[j++] = buff[i-1]; /* insert everithing else */
+                s[j++] = buff[i-1]; /* insert everything else */
         }
         /* starts a string quotation */
         else if (buff[i] == '"')
         {
                 quote = TRUE;
-                s[j++] = buff[i++]; /* insert everithing else */
+                s[j++] = buff[i++]; /* insert everything else */
         }
         /* starts a character quotation */
         else if (buff[i] == '\'')
         {
                 quote_char = TRUE;
-                s[j++] = buff[i++]; /* insert everithing else */
+                s[j++] = buff[i++]; /* insert everything else */
         }
         /* everything else should be copied */
         else
