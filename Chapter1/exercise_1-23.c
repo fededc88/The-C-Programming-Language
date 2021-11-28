@@ -118,7 +118,7 @@ void remove_comments (char s[])
         else if (buff[i] == '"')
         {
                 quote = TRUE;
-                s[j++] = buff[i]; /* insert everithing else */
+                s[j++] = buff[i++]; /* insert everithing else */
         }
         else if (buff[i] == '\'')
         {
