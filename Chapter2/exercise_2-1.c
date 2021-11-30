@@ -13,14 +13,40 @@
 #include <float.h>
 
 void print_appropiate_values_from_std_header(void);
+void compute_appropiate_values(void);
 
 int main (void)
 {
 
     print_appropiate_values_from_std_header();
 
+    compute_appropiate_values();
+
     return 0;
 
+
+}
+
+void compute_appropiate_values(void)
+{
+    long long int acum;
+    
+    printf("\n Computed values\n");
+    printf("----------------------------------------\n");
+
+    /* characters */
+    char _char;
+    printf("`char': ");
+    for(_char = 1, acum = 1; _char > 0; _char*=2, acum*=2);
+    printf("(%d) to %lld\n", _char, acum - 1);
+
+    printf("`signed char': ");
+    printf("(%d) to %lld\n", _char, acum - 1);
+
+    unsigned char _uchar;
+    for(_char = 1, acum = 1; _uchar > 0; _uchar*=2, acum*=2);
+    printf("`unsigned char': ");
+    printf("(%d) to %lld\n", 0, acum - 1);
 
 }
 
