@@ -91,6 +91,121 @@ void compute_appropiate_values(void)
     for(_ulong_long_int = 1, acum = 1; _ulong_long_int > 0; _ulong_long_int*=2, acum*=2);
     printf("%d to %llu\n", 0, ((acum-1)*2+1));
 
+	printf("\n");
+
+	/* finite floating points numbers */
+
+    /*
+     * The representation of a floating-point data in a format consist of:
+     *  ― tripes (sign, exponent, significand); in radix b, the floating-point
+     *    number represented by a triple is: 
+     *
+     *    (-1)**sign * b**exponent * significand
+     *    
+     *  ― +inf, -inf
+     *  ― qNan, sNan
+     * 
+     * The set of infinite floating-point numbers representable within a
+     * particular format is determined by the folowing integer parameters.
+     * Each format is identified by its radix and the number o bits in its
+     * encoding.
+     */
+    long double b = 2.0; // the radix
+    int p;  // the number of digits in the significad (precision)
+    int emax; // the maximun exponent e
+    int emin; // the minimun exponen e
+
+    
+    long double sign = 1.0;
+    long double exponent = 1.0; // exponent
+    long double significand = 1.0; // significand
+
+    /* Parameters defining basic format floating-point numbers
+     *           | Binary format(b=2)
+     * parameter | binary32 | binary53 | binary68 |
+     * p,digits  |    24    |    53    |    113   |
+     * emax      |   +127   |  +1023   |   +1683  |
+     *
+     *  ** emin shall be 1 − emax for all formats.
+     */
+
+    /* 
+     * The smalles positive normal floating-point numbes is b**emin and the
+     * largest is b**emax*(b-b**(1-p))
+     */
+
+	printf("`float': ");
+
+#define BINARY32_P 24
+#define BINARY32_EMAX 127
+
+    double float_min;
+    double float_max;
+
+    /* b**emax */
+    for(emax = 0; emax < (BINARY32_EMAX); emax++)
+        exponent *= b;
+
+    for(emin = 1; emin < (BINARY32_P - 1); emin++)
+        significand /= b;
+
+    significand = b - significand;
+
+    float_max = sign*significand*exponent;
+    float_min = sign*significand/exponent;
+
+    printf("%g to %g (FLT_MIN - FLT_MAX)\n", float_min, float_max);
+    
+	printf("'double': ");
+
+#define BINARY64_P 53
+#define BINARY64_EMAX 1023
+
+    double double_min;
+    double double_max;
+
+    exponent = 1.0; // exponent
+    significand = 1.0; // significand
+
+    /* b**emax */
+    for(emax = 0; emax < (BINARY64_EMAX); emax++)
+        exponent *= b;
+
+    for(emin = 0; emin < (BINARY64_P - 1); emin++)
+        significand /= b;
+
+    significand = b - significand;
+
+    double_max = sign*significand*exponent;
+    double_min = sign*significand/exponent;
+
+    printf("%lg to %lg (DBL_MIN - DBL_MAX)\n", double_min, double_max);
+
+	printf("'long double': ");
+
+#define BINARY128_P 113
+#define BINARY128_EMAX 16383
+
+    long double long_double_min;
+    long double long_double_max;
+
+    exponent = 1.0; // exponent
+    significand = 1.0; // significand
+
+    /* b**emax */
+    for(emax = 0; emax < (BINARY128_EMAX); emax++)
+        exponent *= b;
+
+    /* b**emin */
+    for(emin = 0; emin < (BINARY128_P - 1); emin++)
+        significand /= b;
+
+    significand = (2.0 - significand);
+
+    long_double_max = sign*1.999999999999*exponent;
+    long_double_min = sign*significand/exponent;
+
+    printf("%Lg to %Lg (LDBL_MIN - LDBL_MAX)\n", long_double_min, long_double_max);
 }
 
 void print_appropiate_values_from_std_header(void)
@@ -144,7 +259,6 @@ void print_appropiate_values_from_std_header(void)
     printf("%lg to %lg (DBL_MIN - DBL_MAX)\n", DBL_MIN, DBL_MAX);
 	printf("'long double': ");
     printf("%Lg to %Lg (LDBL_MIN - LDBL_MAX)\n", LDBL_MIN, LDBL_MAX);
-
 }
 
 //
