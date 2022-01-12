@@ -12,10 +12,11 @@
 
 #define MAXLINE 1000     /* maximum input line size */
 
-int htoi(char s[]);
+int htoi(const char s[]);
 int getLine (char line[], int maxline);
 
-int htoi(char s[])
+/* htoi: converts string of hexadecimal digits into its equivalent integer value */
+int htoi(const char s[])
 {
     int i, n;
 
@@ -24,7 +25,7 @@ int htoi(char s[])
     if(s[0] != '0' && (s[1] != 'x' && s[1] != 'X'))
         return 0;
 
-    for (i = 2; s[i] != '0'; i++)
+    for (i = 2; s[i] != '\0'; i++)
 
         if ( s[i] >= '0' && s[i] <= '9' ) 
         {
@@ -32,11 +33,11 @@ int htoi(char s[])
         }
         else if (s[i] >= 'A' && s[i] <= 'F')
         {
-            n = 16* n + (s[i] - 'A');
+            n = 16 * n + (s[i] - 'A' + 10);
         }
         else if (s[i] >= 'a' && s[i] <= 'f')
         {
-            n = 16 * n + (s[i] - 'a');
+            n = 16 * n + (s[i] - 'a' + 10);
         }
 
     return n;
@@ -47,14 +48,11 @@ void main (void)
     char s[MAXLINE];
     int n;
 
-
     while(getLine(s,MAXLINE))
     {
-        htoi(s);
-        printf("%s -> %d", s, n);
+        n = htoi((const char *)s);
+        printf("%s -> %d\n", s, n);
     }
-
-
 }
 
 /* getLine: reads line into s[], return length */
