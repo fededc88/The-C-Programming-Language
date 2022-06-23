@@ -28,7 +28,7 @@ void itob(int n, char s[], unsigned int b)
 	i = 0;
 	do {       /* generate digits in revered order */
 		s[i++] = un % b + '0';    /* get next digit */
-        if( b == 16 && s[i-1] > 9)
+        if( b == 16 && s[i-1] > '9')
             s[i-1] += 7;
 	} while ((un /= b) != 0);     /* delete it */
 
@@ -68,19 +68,29 @@ int main(void)
     char line[MAXLINE] = {"\0"}; /* input line */
 
 	itob(0, line, 2); /* do-while loop is necessary for 0 */
-	printf("%i --2-> %s\n", 0, line);
+	printf("%i\t--2->\t%s\n", 0, line);
 	itob(INT_MAX, line, 2);
-	printf("%i --2-> %s\n", INT_MAX, line);
+	printf("%i\t--2->\t %s\n", INT_MAX, line);
 	itob(INT_MIN, line, 2);
-	printf("%i --2-> %s\n", INT_MIN, line);
+	printf("%i\t--2->\t%s\n", INT_MIN, line);
+
+    printf("\n");
+
+	itob(0, line, 10); /* do-while loop is necessary for 0 */
+	printf("%i\t--10->\t%s\n", 0, line);
+	itob(INT_MAX, line, 10);
+	printf("%i\t--10->\t %s\n", INT_MAX, line);
+	itob(INT_MIN, line, 10);
+	printf("%i\t--10->\t%s\n", INT_MIN, line);
+
+    printf("\n");
 
 	itob(0, line, 16); /* do-while loop is necessary for 0 */
-	printf("%i --16-> %s\n", 0, line);
+	printf("%i\t--16->\t%s\n", 0, line);
 	itob(INT_MAX, line, 16);
-	printf("%i --16-> %s\n", INT_MAX, line);
+	printf("%i\t--16->\t%s\n", INT_MAX, line);
 	itob(INT_MIN, line, 16);
-	printf("%i --16-> %s\n", INT_MIN, line);
-
+	printf("%i\t--16->\t%s\n", INT_MIN, line);
   
 	return 0;
 }
