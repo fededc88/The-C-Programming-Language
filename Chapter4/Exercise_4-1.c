@@ -6,6 +6,8 @@
  * submissions are welcome.
  */
 
+#include "Exercise_4-1.h"
+
 /* strindex: return index of the rightmost t occurrence in s, -1 if none */
 int strindex(char s[], char t[])
 {
