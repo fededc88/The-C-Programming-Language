@@ -34,7 +34,7 @@
     - +:test/**
     - -:test/support
   :source:
-    - Chapter4/**
+    - src/**
   :support:
     - test/support
   :libraries: []
