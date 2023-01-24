@@ -1,3 +1,7 @@
+
+# Ceedling temporary files
+/build
+
 # Prerequisites
 *.d
 
