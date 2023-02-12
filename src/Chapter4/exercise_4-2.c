@@ -15,28 +15,36 @@
 double atof(char s[])
 {
     double val, power, val_powere;
-    int i, j, sign, signE;
+    int i, j, sign = 1, signE;
 
-    for(i = 0; isspace(s[i]); i++) /* skip white space */
-        ;
-    sign = (s[i] == '-') ? -1 : 1;
+    for(i = 0; isspace(s[i]); i++); /* skip white space */
+
     if (s[i] == '+' || s[i] == '-')
+    {
+        sign = (s[i] == '-') ? -1 : 1;
         i++;
+    }
 
     for (val = 0.0; isdigit(s[i]); i++)
         val = 10.0 * val + (s[i] - '0');
+
     if (s[i] == '.')
         i++;
+
     for (power = 1.0; isdigit(s[i]); i++){
         val = 10.0 * val + (s[i] - '0');
         power *= 10.0;
     }
+
     if (s[i] == 'e' || s[i] == 'E')
     {
         i++;
-        signE = (s[i] == '-') ? -1 : 1;
+
         if (s[i] == '+' || s[i] == '-')
+        {
+            signE = (s[i] == '-') ? -1 : 1;
             i++;
+        }
 
         for (val_powere = 0; isdigit(s[i]); i++)
             val_powere = 10.0 * val_powere + (s[i] - '0');
