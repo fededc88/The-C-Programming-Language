@@ -1,6 +1,5 @@
 #ifdef TEST
 
-#define UNITY_INCLUDE_DOUBLE
 #include "unity.h"
 
 #include "exercise_4-2.h"
@@ -13,7 +12,7 @@ void tearDown(void)
 {
 }
 
-void test_exercise_4_2_NeedToImplement(void)
+void test_exercise_4_2(void)
 {
 #define MAXLEN 1000
 

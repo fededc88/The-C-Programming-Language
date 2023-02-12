@@ -12,7 +12,7 @@ void tearDown(void)
 {
 }
 
-void test_Exercise_4_1_NeedToImplement(void)
+void test_Exercise_4_1(void)
 {
 #define MAXLEN 1000
 
