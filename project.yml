@@ -46,6 +46,7 @@
   :common: &common_defines []
   :test:
     - *common_defines
+    - UNITY_INCLUDE_CONFIG_H
     - TEST
   :test_preprocess:
     - *common_defines
